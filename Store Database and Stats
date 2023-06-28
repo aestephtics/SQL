@@ -1,0 +1,27 @@
+-- Create a store database
+
+CREATE TABLE shop (id INTEGER PRIMARY KEY, item TEXT, aisle TEXT, price INTEGER, quantity INTEGER);
+INSERT INTO shop VALUES (1, "Shirt", "Clothing", "20", 100);
+INSERT INTO shop VALUES (2, "Dress", "Clothing", "50", 95);
+INSERT INTO shop VALUES (3, "Shorts", "Clothing", "25", 60);
+INSERT INTO shop VALUES (4, "Pants", "Clothing", "30", 85);
+INSERT INTO shop VALUES (5, "Shoes", "Clothing", "65", 45);
+INSERT INTO shop VALUES (6, "Socks", "Clothing", "5", 100);
+INSERT INTO shop VALUES (7, "Undergarments", "Clothing", "30", 100);
+INSERT INTO shop VALUES (8, "Bikes", "Outdoors", "150", 30);
+INSERT INTO shop VALUES (9, "Rollerskates", "Outdoors", "200", 15);
+INSERT INTO shop VALUES (10, "Helmet", "Outdoors", "30", 10);
+INSERT INTO shop VALUES (11, "Fishing Rod", "Outdoors", "15", 10);
+INSERT INTO shop VALUES (12, "Submarines", "Outdoors", "250000", 5);
+INSERT INTO shop VALUES (13, "Boats", "Outdoors", "100000", 1);
+INSERT INTO shop VALUES (14, "Jet Ski", "Outdoors", "60000", 6);
+INSERT INTO shop VALUES (15, "Life Vest", "Outdoors", "25", 50);
+
+--display database according to price
+SELECT * FROM shop 
+ORDER BY price;
+
+--What is the average price of items for each department?
+SELECT AVG(price) 
+FROM shop 
+GROUP BY aisle;
